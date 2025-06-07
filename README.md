@@ -65,12 +65,12 @@ streamlit run main.py
 ```
 ├── src/
 │   └── postulator/
-│       ├── config                  # AI agent configuration
-│       │    └── ....yaml           # Description of agents and tasks
-│       ├── data_structures         # AI agent configuration
-│       │    └── ....py             # Custom pydantic data structure definition
-│       ├── tools                   # AI agent configuration
-│       │    └── custom_tools.py    # Custom tools definition
+│       ├── config                  # Description of AI agents and tasks
+│       │    └── ....yaml           
+│       ├── data_structures         # Custom pydantic data structure definition
+│       │    └── ....py             
+│       ├── tools                   # Custom tools definition
+│       │    └── custom_tools.py    
 │       ├── app.py                  # Main Streamlit application
 │       ├── crew.py                 # Crews of AI agent configuration
 │       ├── translations.py         # Multilingual support
