@@ -1,0 +1,13 @@
+boto3
+crewai
+crewai-tools
+streamlit
+requests
+google.generativeai
+pydantic
+pysqlite3-binary
+streamlit-pdf-viewer
+PyPDF2
+st-gsheets-connection
+babel
+pymupdf4llm

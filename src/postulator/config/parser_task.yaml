@@ -1,0 +1,31 @@
+cv_parser_task:
+   description: >
+    Transform the provided PDF CV text into a structured CV object.
+    Parse the unstructured CV text ({cv_pdf}) and extract relevant information
+    into appropriate sections following the provided schema structure:
+      ({schema})
+    
+    Key responsibilities:
+    - Extract personal information (name, contact details, location)
+    - Identify and categorize educational background
+    - Parse professional experiences with detailed descriptions
+    - Capture projects and their technical details
+    - Collect skills (programming languages, spoken languages, software)
+    - Maintain data accuracy without inventing or assuming information
+    - Handle optional fields appropriately
+    - Ensure all required fields are populated with extracted data
+    
+    Every piece of information from the CV must be accurately represented in the output.
+    Only include information that is explicitly present in the source text.
+    Do not infer or generate data that isn't clearly stated in the CV.
+
+   expected_output: >
+    A complete CV object that accurately represents the source document,
+    structured according to the provided JSON schema ({schema}).
+    The output must be valid JSON that strictly follows the schema structure.
+    All required fields must be populated with actual data from the CV.
+    Optional fields should only be included if corresponding information
+    is found in the source text.
+    Be aware that you should not put in your output a copy of the structure we provided to you.
+    
+   agent: cv_parser

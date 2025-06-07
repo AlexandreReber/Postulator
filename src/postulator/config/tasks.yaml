@@ -1,0 +1,102 @@
+research_task:
+  description: >
+    Analyze the job posting provided ({job_posting}) 
+    to extract:
+      - job title
+      - company information (including adress)
+      - job overview (circa 50 words)
+      - qualifications/requirements (key skills, experiences, and qualifications 
+        required, ...)
+      - company Culture/work Environment
+    Use the tools to gather content and identify 
+    and categorize the requirements.
+  expected_output: >
+    Usefull information that may be usefull for the candidat.
+    A structured list of job requirements, including necessary 
+    skills, qualifications, and experiences.
+  agent: researcher
+
+strength_weakness_analysis_task:
+  description: >
+    Perform a critical analysis of the candidate's profile against the requirements
+    specified in the job description from previous task. Cross-reference the candidate's 
+    resume ({resume}), personal write-up ({personal_writeup}), and supporting documents 
+    to identify:
+    - Strengths that align with the job requirements
+    - Gaps/missing qualifications mentioned in the job posting
+    - Potential weaknesses (e.g., lack of required technical skills like SAS/Excel)
+    - Overstated or unverified claims in the candidate's materials
+  expected_output: >
+    A structured analysis document containing:
+    - Key strengths (matching skills/experiences with job requirements)
+    - Critical weaknesses (missing required skills, e.g., "Lacks SAS expertise listed as 'mandatory' in job posting")
+    - Neutral observations (potential but unproven qualifications)
+    Format example:
+    """
+    **Strengths:**
+    - Strong match: [Skill/Experience] (evidenced by [resume section/personal write-up])
+    
+    **Weaknesses:**
+    - Critical gap: Missing [Required Skill] (specified in job posting under [section])
+    """
+  agent: profile_matcher
+
+resume_strategy_task:
+  description: >
+    Using the profile and job requirements obtained from 
+    previous tasks as well as the original resume ({resume}), 
+    tailor the resume (in {language}) to highlight the most 
+    relevant areas. Employ tools to adjust and enhance the 
+    resume content. 
+    
+    The resume is composed mainly of:
+      - initial summary (very short, 20 words max)
+      - education
+      - work experience
+      - projects
+      - skills
+      - others section you find usefull (for example interests)
+
+    Make sure this is the best resume but 
+    don't make up any information.
+    Your writing is concise and impactful.
+    All to better reflect the candidates 
+    abilities and how it matches the job posting.
+  expected_output: >
+    An resume that effectively highlights the candidate's 
+    qualifications and experiences relevant to the job.
+    The resume is written in {language}.
+    The writting is impactful and concise.
+    It needs to be a .md format.
+  agent: resume_strategist
+
+motivation_letter_task:
+   description: >
+    Craft a compelling motivation letter using the 
+    informations acquired from previous tasks
+    and the candidate's personal write-up 
+      ({personal_writeup}).
+    Emphasize key qualifications and 
+    achievements that align with the position.
+    Highlight candidate's strengths and address its weaknesses.
+    Maintain truthful information while presenting 
+    it in the most impactful way. Ensure proper formal 
+    letter structure and professional tone.
+    Read the motivation letter example provided, mimic its writing style,
+    and take inspiration from it when relevant.
+    Structure the letter to match the JSON structure:
+      ({schema})
+    Make sure to check with a human if the draft is good before finalizing your answer
+    (don't forget to put the draft in argument of your feedback tool along with
+    some text you wish to communicate to the human).
+   expected_output: >
+    A polished motivation letter that synergizes with the 
+    resume and demonstrates strong fit and motivation for 
+    the position while containing only true information.
+    The letter is written in {language}.
+    The letter has been approved by a human (request human feedback before 
+    finalizing your answer).
+    The answer is a structured JSON matching: 
+      {schema}
+    Be aware that you should not put in your output a copy of the structure we provided to you.
+   agent: motivation_specialist
