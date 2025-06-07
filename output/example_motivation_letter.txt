@@ -1,0 +1,28 @@
+% ========== FORMAL OPENING ==========
+Madame, Monsieur,
+
+% ========== OPENING PARAGRAPH ==========
+% Strategic purpose: Establish relevance + value proposition
+Titulaire du master 2 Mathématiques Vision et Apprentissage de l'Université de Recherche Paris-Sud et ayant une première expérience de recherche en Théorie des systèmes dynamiques, je me permets de vous écrire pour vous exprimer mon intérêt pour l'offre de thèse que vous proposez. Je suis persuadé que ma capacité à aborder des problèmes complexes, ma rigueur et mes compétences rédactionnelles développées durant mes précédentes expériences de recherche en modélisation statistique pourraient me permettre de contribuer à la Théorie des systèmes dynamiques pour laquelle j'ai grand intérêt.
+
+% ========== CORE PARAGRAPH 1 ==========
+En effet, au terme d'un M1 généraliste Mathématiques et Applications à l'Université Nouvelle de Paris, j'ai eu l'opportunité de réaliser un premier stage de recherche sous la direction du Professeur Édouard Lambert (Laboratoire de Modélisation et Simulation Probabiliste) durant lequel j'ai eu l'opportunité de me familiariser avec la Théorie des systèmes dynamiques appliquées aux processus stochastiques par la lecture de son monographe récent et de réaliser des expérimentations en R.
+
+% ========== CORE PARAGRAPH 2 ==========
+Ensuite, dans le cadre du M2 MVA à l'Université de Recherche Paris-Sud, lors duquel j'ai suivi un cours sur l'apprentissage statistique en présence de systèmes dynamiques, j'ai réalisé mon stage de fin d'études sous la co-direction principalement des Professeurs L. Dubois (Laboratoire d'Analyse et de Probabilités Appliquées) et M. Berger (Institut de Statistique et de Biomathématique Appliquée) en travaillant sur des méthodes basées sur la théorie ergodique pour la construction de modèles dynamiques multivariés. Mon travail a été principalement théorique bien que j'aie tout de même réalisé en fin de stage des expérimentations sur données simulées à l'aide de Python.
+
+% ========== CAREER DECISION PARAGRAPH ==========
+% Strategic purpose: Address potential concerns + show commitment
+Hésitant quant à mon orientation, j'ai renoncé à poursuivre en thèse au sein du Laboratoire d'Analyse et de Probabilités Appliquées pour me réorienter en partant faire le M2 Probabilités et Finance à l'Université Nouvelle de Paris. Rattrapés par des problèmes de santé---qui seront réglés d'ici octobre---j'ai finalement dû interrompre mes études. Cela m'a permis de prendre du temps pour réfléchir à mon orientation et je suis arrivé à la conclusion que mon appétence redécouverte pour les aspects théoriques et l'innovation faisaient finalement de la carrière académique la voie plus adaptée, d'où ma présente candidature.
+
+% ========== CLOSING PARAGRAPH ==========
+% Strategic purpose: Reinforce enthusiasm + call to action
+Je suis particulièrement sensible à l'engagement de l'Institut de Recherche en Systèmes Complexes en faveur d'une recherche plus fondamentale et de l'innovation, valeurs qui résonnent avec ma propre conviction que l'analyse des systèmes dynamiques peut être un puissant levier pour construire un avenir plus prévisible et plus stable. L'opportunité de mettre mes compétences au service d'une institution qui place la recherche au cœur de ses préoccupations est pour moi une source de motivation essentielle.
+
+% ========== FORMAL CLOSING ==========
+Vous remerciant de l'attention que vous porterez à ma candidature, je reste à votre disposition pour toute information complémentaire.
+
+% ========== FINAL GREETING ==========
+Veuillez agréer, Madame, Monsieur, mes salutations distinguées.
+
+Antoine Dupont
