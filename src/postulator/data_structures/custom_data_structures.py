@@ -2,6 +2,10 @@ from pydantic import BaseModel, Field
 from datetime import date
 from typing import Optional, List, Optional
 
+# ---------------------
+# Letter-related models
+# ---------------------
+
 #ask the user to provide this
 class SenderInfo(BaseModel):
     """Sender's information."""
@@ -23,17 +27,6 @@ class Paragraph(BaseModel):
     strategic_purpose: str = Field(..., description="Strategic purpose of the paragraph in the argumentation")
     content: str = Field(..., description="Content of the paragraph")
 
-class LetterContent_old(BaseModel):
-    """Content of the motivation letter."""
-    formal_opening: str = Field(..., description="FORMAL OPENING")
-    opening_paragraph: Paragraph = Field(..., description="OPENING PARAGRAPH. Establish relevance + last formation + overview of motivation") #Strategic purpose: Establish relevance + value proposition")
-    core_paragraph_1: Paragraph = Field(..., description="CORE PARAGRAPH 1")
-    core_paragraph_2: Paragraph = Field(..., description="CORE PARAGRAPH 2")
-    career_decision_paragraph: Paragraph = Field(..., description="CORE PARAGRAPH 3")
-    closing_paragraph: Paragraph = Field(..., description="LAST PARAGRAPH. Strategic purpose: Reinforce enthusiasm + call to action")
-    formal_closing: str = Field(..., description="GRATITUDE AND AVAILABILITY")
-    final_greeting: str = Field(..., description="FORMAL CLOSING")
-
 # the user should be able to choose the number of paragraphs, by default we put 3 core paragraphs
 class LetterContent(BaseModel):
     """Content of the motivation letter."""
@@ -51,7 +44,9 @@ class MotivationLetter(BaseModel):
     subject: str = Field("Motivation letter", description="Subject of the letter.")
     content: LetterContent = Field(..., description="Content of the letter.")
 
-
+# -----------------
+# CV-related models
+# -----------------
 
 class Education(BaseModel):
     institution: str = Field(..., description="Name of the educational institution")

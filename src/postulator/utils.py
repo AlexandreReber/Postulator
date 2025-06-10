@@ -1,15 +1,19 @@
+# Standard library imports
 import json
+import os
+import unicodedata
 from pathlib import Path
-from typing import Dict, Any
+from random import randint
+from typing import Dict, Any, Tuple, Optional
 
-import json
-from pydantic import ValidationError
-import requests
-import time
-
+# Third-party imports
 import google.generativeai as genai
+import streamlit as st
+from pydantic import ValidationError
 
-# API Key validation
+# Local imports
+from src.postulator.data_structures.custom_data_structures import CV
+
 def contains_special_characters(text: str) -> bool:
     """
     Check if a string contains special characters (non-ASCII characters).
@@ -19,6 +23,11 @@ def contains_special_characters(text: str) -> bool:
     return any(not c.isascii() for c in text)
 
 def validate_api_key(api_key):
+    """Check if the provided Google Gemini API key is valid.
+    
+    Args:
+        api_key: User's API key for authentication
+    """
     if not api_key or not api_key.strip():
         return False, "API key cannot be empty"
     
@@ -103,12 +112,13 @@ def load_json_into_pydantic(file_path, model):
     except Exception as e:
         print(f"An error occurred while reading the JSON file: {e}")
 
-
-
-import streamlit as st
-from src.postulator.data_structures.custom_data_structures import CV
-
 def load_from_gsheet(conn, api_key):
+    """Load user data from Google Sheets.
+    
+    Args:
+        conn: Google Sheets connection object
+        api_key: User's API key for authentication
+    """
     if not st.session_state.api_key_provided:
         return
 
@@ -143,7 +153,6 @@ def load_from_gsheet(conn, api_key):
         if st.session_state.cv_text:
             print(st.session_state.cv_text)
             from random import randint
-            import os
             file_path = os.path.join("input", str(randint(0,100)) + "extended_resume.md")
             with open(file_path, "w") as f:
                 f.write(st.session_state.cv_text)
@@ -164,6 +173,13 @@ def load_from_gsheet(conn, api_key):
 
 
 def update_gsheet(conn, api_key, spreadsheet="Feuille 1"):
+    """Update Google Sheets with user data.
+    
+    Args:
+        conn: Google Sheets connection object
+        api_key: User's API key for authentication
+        spreadsheet: Sheet name to update ("Feuille 1" or "Feuille 2")
+    """
     if not st.session_state.api_key_provided:
         return
 
@@ -204,10 +220,6 @@ def update_gsheet(conn, api_key, spreadsheet="Feuille 1"):
             df.loc[df[df["Key"] == api_key].index, "CV pydantic"] = st.session_state.cv_pydantic.model_dump_json() if st.session_state.cv_pydantic else "empty"
         
         conn.update(worksheet="Feuille 2", data=df)
-
-
-
-
 
 def load_user_usage(conn, name):
     with st.empty():
